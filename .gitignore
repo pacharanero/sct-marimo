@@ -1,0 +1,45 @@
+# Python and marimo
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+__marimo__/
+
+# Licensed terminology and generated data
+*.arrow
+*.db
+*.db-shm
+*.db-wal
+*.fst
+*.ndjson
+*.parquet
+*.zip
+snomed-concepts/
+snomed-hierarchies/
+
+# Persisted notebook outputs are private unless deliberately reviewed
+*.ipynb
+*.pdf
+exports/
+snapshots/
+
+# Secrets and retained private work
+.env
+.env.*
+.private/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Agent and browser automation output
+.claude/
+.playwright-mcp/
+.playwright/
+playwright-report/
+blob-report/
+test-results/
