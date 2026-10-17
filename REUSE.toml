@@ -19,7 +19,9 @@ path = [
     "**/*.pyc",
     "LICENSE",
     "src/sct_marimo/py.typed",
+    "tests/fixtures/sct-v0.29.0-conformance.json",
     "uv.lock",
+    "tests/fixtures/sct-v0.29.0-synthetic.db",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Marcus Baw and Baw Medical Ltd"

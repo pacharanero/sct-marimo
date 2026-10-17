@@ -15,4 +15,5 @@ fi
 
 uv run --locked ruff format --check .
 uv run --locked ruff check .
+uv run --locked marimo check --strict notebooks/concept-set-workbench.py
 exec uv run --locked mypy

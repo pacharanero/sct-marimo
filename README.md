@@ -3,7 +3,7 @@
 A local-first marimo workbench for formulating, inspecting, and testing SNOMED CT concept sets with [`sct`](https://github.com/pacharanero/sct).
 
 > [!IMPORTANT]
-> This repository is an exploratory implementation. It does not yet contain a working notebook, is not a medical device, and must not be used to make clinical decisions.
+> This repository is an exploratory implementation. Its working notebook is validated only against synthetic data, is not a medical device, and must not be used to make clinical decisions.
 
 ## Product Hypothesis
 
@@ -20,9 +20,23 @@ The first useful slice is deliberately narrow: run supported ECL against a selec
 
 ## Status
 
-The strict Python application boundary over `sct-py` is implemented and tested; the marimo vertical slice is not. See the [adapter contract](spec/adapter.md), [product specification](spec/product.md), [roadmap](spec/roadmap.md), and [safety statement](SAFETY.md).
+The strict Python application boundary and the first synthetic marimo concept-set workflow are implemented and tested. The notebook runs two supported ECL expressions only after an explicit request, marks edited results stale, presents an exact display-bounded set diff, and opens a persistent concept and direct-hierarchy inspector. See the [adapter contract](spec/adapter.md), [product specification](spec/product.md), [roadmap](spec/roadmap.md), and [safety statement](SAFETY.md).
 
 The project currently pins Python 3.10-compatible `marimo` and `sct-py` releases and commits the complete uv resolution. The adapter validates untyped SDK results into immutable local models, removes sensitive source paths from exportable provenance, and preserves explicit unavailable and truncated states.
+
+The broader product first-slice acceptance is not complete. `sct-py` 0.29.0 does not yet expose structured ECL parser/evaluator diagnostics or term-annotation warnings, and private-session output and egress controls remain roadmap work.
+
+## Run The Synthetic Workbench
+
+After installing the locked environment, launch the notebook against the committed licence-free test database:
+
+```sh
+uv run --locked marimo run notebooks/concept-set-workbench.py \
+  --no-sandbox \
+  -- --db tests/fixtures/sct-v0.29.0-synthetic.db
+```
+
+The database path is accepted as a launch argument and is not placed in result models or rendered provenance. For licensed terminology, supply an authorised local database built through the canonical `sct` RF2 -> NDJSON -> SQLite pipeline.
 
 ## Development
 
@@ -32,7 +46,7 @@ Install [uv](https://docs.astral.sh/uv/), then create the locked environment:
 uv sync --locked --all-groups
 ```
 
-Use `s/lint` for format, lint, and strict type checks; `s/test` for tests; `s/build` for distributions; and `reuse lint` for licensing metadata. The same gates run in CI.
+Use `s/lint` for format, lint, strict notebook checks, and strict type checks; `s/test` for unit, notebook-startup, and synthetic conformance tests; `s/build` for distributions; and `reuse lint` for licensing metadata. The same gates run in CI.
 
 ## Relationship To `sct`
 

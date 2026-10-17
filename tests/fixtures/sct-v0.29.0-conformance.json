@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "repository": "https://github.com/pacharanero/sct",
+    "tag": "v0.29.0",
+    "commit": "bfcf41c2196152da5cc08e906c683ff3621b25a8",
+    "surfaces": [
+      "sct-rs Rust SDK",
+      "sct-py Python SDK",
+      "sct CLI"
+    ]
+  },
+  "database": {
+    "sha256": "6dcf05084f79e7b2a0a7204a46847ff10c71a01be74f756e99bd3fe8e28605da",
+    "content_fingerprint": "sha256:bde820582faed8ed812340921b05221dd34019b459b93bef00b6f062412e1c80",
+    "sct_version": "0.29.0",
+    "release_date": "2026-01-01"
+  },
+  "concepts": {
+    "22298006": {
+      "preferred_term": "Myocardial infarction",
+      "fsn": "Myocardial infarction (disorder)",
+      "active": true,
+      "parent_ids": [
+        "404684003"
+      ],
+      "attribute_ids": [
+        "55641003",
+        "74281007"
+      ]
+    },
+    "46635009": {
+      "preferred_term": "Type 1 diabetes mellitus",
+      "fsn": "Type 1 diabetes mellitus (disorder)",
+      "active": true,
+      "parent_ids": [
+        "73211009"
+      ],
+      "refset_ids": [
+        "991381000000107"
+      ]
+    }
+  },
+  "ecl": {
+    "<<73211009": [
+      "44054006",
+      "46635009",
+      "73211009"
+    ],
+    "22298006 OR 46635009": [
+      "22298006",
+      "46635009"
+    ]
+  },
+  "search": {
+    "query": "heart attack",
+    "limit": 1,
+    "ids": [
+      "22298006"
+    ]
+  },
+  "hierarchy": {
+    "concept_id": "73211009",
+    "limit": 1,
+    "child_ids": [
+      "46635009"
+    ],
+    "total_count": 2,
+    "truncated": true
+  }
+}

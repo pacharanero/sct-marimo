@@ -6,7 +6,7 @@
 
 ## Current Status
 
-The repository currently contains a specification and governance scaffold only. There is no working notebook and no validated clinical workflow. It must not be used for diagnosis, treatment, patient selection, clinical decision support, or production codelist approval.
+The repository contains a working concept-set notebook validated against a committed licence-free synthetic terminology database. It has not passed the broader trust, output-boundary, human-factors, or clinical workflow gates. It must not be used for diagnosis, treatment, patient selection, clinical decision support, or production codelist approval.
 
 ## Excluded Uses
 
@@ -36,3 +36,5 @@ The repository currently contains a specification and governance scaffold only. 
 - Run human review with deliberately flawed synthetic expressions before claiming usability or safety benefit.
 
 Safety claims must be evidence-backed and revised with the implementation. New hazards belong here or in a linked hazard log as the project grows.
+
+The first control above is implemented for the supported-expression workflow: the committed v0.29.0 conformance oracle records Rust SDK, Python SDK, and CLI observations, while CI rechecks the immutable synthetic database, direct Python SDK, validated adapter, exact diff, and hierarchy limits. This is terminology-result evidence only; it does not establish clinical correctness or satisfy the remaining controls.

@@ -13,6 +13,7 @@ __marimo__/
 # Licensed terminology and generated data
 *.arrow
 *.db
+!tests/fixtures/sct-v0.29.0-synthetic.db
 *.db-shm
 *.db-wal
 *.fst

@@ -1,6 +1,6 @@
 # Agent Instructions
 
-`sct-marimo` is an exploratory local-first marimo workbench built on the [`sct`](https://github.com/pacharanero/sct) terminology engine. Its Python application boundary exists, but its working notebook does not: do not infer that other described capabilities are implemented.
+`sct-marimo` is an exploratory local-first marimo workbench built on the [`sct`](https://github.com/pacharanero/sct) terminology engine. Its Python application boundary and synthetic supported-ECL concept-set workflow exist; do not infer that the broader first-slice diagnostics, trust controls, application-data bridge, or clinical workflow are implemented.
 
 ## Read First
 
@@ -42,7 +42,7 @@ s/build
 reuse lint
 ```
 
-Once a notebook exists, add its execution gate here and in CI. Trust-boundary acceptance must include adversarial synthetic values and observation of zero-egress/private-session behaviour, not only unit tests written alongside the implementation.
+`s/lint` runs strict marimo notebook checks, and `s/test` executes the no-query notebook startup plus the committed synthetic database conformance suite. Trust-boundary acceptance must include adversarial synthetic values and observation of zero-egress/private-session behaviour, not only unit tests written alongside the implementation.
 
 ## Git
 
