@@ -3,7 +3,7 @@
 A local-first marimo workbench for formulating, inspecting, and testing SNOMED CT concept sets with [`sct`](https://github.com/pacharanero/sct).
 
 > [!IMPORTANT]
-> This repository is an exploratory specification and scaffold. It does not yet contain a working notebook, is not a medical device, and must not be used to make clinical decisions.
+> This repository is an exploratory implementation. It does not yet contain a working notebook, is not a medical device, and must not be used to make clinical decisions.
 
 ## Product Hypothesis
 
@@ -20,9 +20,19 @@ The first useful slice is deliberately narrow: run supported ECL against a selec
 
 ## Status
 
-The detailed product and safety boundaries have moved here from the exploratory `sct` specification. Implementation has not started. See the [product specification](spec/product.md), [roadmap](spec/roadmap.md), and [safety statement](SAFETY.md).
+The strict Python application boundary over `sct-py` is implemented and tested; the marimo vertical slice is not. See the [adapter contract](spec/adapter.md), [product specification](spec/product.md), [roadmap](spec/roadmap.md), and [safety statement](SAFETY.md).
 
-The first implementation decision is intentionally deferred until current Python, marimo, and `sct-py` packaging constraints have been verified. This repository will not acquire a speculative dependency file merely to look complete.
+The project currently pins Python 3.10-compatible `marimo` and `sct-py` releases and commits the complete uv resolution. The adapter validates untyped SDK results into immutable local models, removes sensitive source paths from exportable provenance, and preserves explicit unavailable and truncated states.
+
+## Development
+
+Install [uv](https://docs.astral.sh/uv/), then create the locked environment:
+
+```sh
+uv sync --locked --all-groups
+```
+
+Use `s/lint` for format, lint, and strict type checks; `s/test` for tests; `s/build` for distributions; and `reuse lint` for licensing metadata. The same gates run in CI.
 
 ## Relationship To `sct`
 
@@ -32,7 +42,7 @@ The first implementation decision is intentionally deferred until current Python
 
 Use synthetic data by default. SNOMED CT content and databases derived from it are separately licensed material and are not distributed by this project.
 
-Future software source is licensed under [AGPL-3.0-or-later](LICENSES/AGPL-3.0-or-later.txt). Project documentation is licensed under [CC-BY-SA-4.0](LICENSES/CC-BY-SA-4.0.txt). See [LICENSE](LICENSE) for the file-level policy.
+Software source is licensed under [AGPL-3.0-or-later](LICENSES/AGPL-3.0-or-later.txt). Project documentation is licensed under [CC-BY-SA-4.0](LICENSES/CC-BY-SA-4.0.txt). See [LICENSE](LICENSE) for the file-level policy.
 
 ## Contributing
 

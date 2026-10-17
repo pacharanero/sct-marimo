@@ -1,6 +1,6 @@
 # SNOMED Solver Workbench
 
-Status: Exploratory product specification. Implementation has not started. This specification originated in [`sct`](https://github.com/pacharanero/sct/blob/6384c9a2c0c39f73a66e133b2641d56f9ea92be3/spec/marimo-snomed-notebook.md) from lessons learned in a local private Data Golf workbench and now belongs to this repository. It refines the older [marimo/Jupyter idea in `sct` issue #42](https://github.com/pacharanero/sct/issues/42) without closing that broader issue.
+Status: Exploratory product specification. The Python application boundary is implemented; the working notebook is not. This specification originated in [`sct`](https://github.com/pacharanero/sct/blob/6384c9a2c0c39f73a66e133b2641d56f9ea92be3/spec/marimo-snomed-notebook.md) from lessons learned in a local private Data Golf workbench and now belongs to this repository. It refines the older [marimo/Jupyter idea in `sct` issue #42](https://github.com/pacharanero/sct/issues/42) without closing that broader issue.
 
 ## Problem And Product Hypothesis
 

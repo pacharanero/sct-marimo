@@ -16,7 +16,7 @@ Never attach licensed SNOMED CT terms, patient-identifiable data, private applic
 
 1. Create a descriptive branch from `main`.
 2. Keep the pull request focused on one coherent change.
-3. Run the validation commands in [agent-instructions.md](agent-instructions.md).
+3. Run `uv sync --locked --all-groups`, then the validation commands in [agent-instructions.md](agent-instructions.md).
 4. Update documentation, tests, safety evidence, and roadmap ownership when they apply.
 5. Explain the change, rationale, trust implications, and evidence in the pull request description.
 

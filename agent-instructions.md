@@ -1,11 +1,12 @@
 # Agent Instructions
 
-`sct-marimo` is an exploratory local-first marimo workbench built on the [`sct`](https://github.com/pacharanero/sct) terminology engine. It is currently specification-led: do not infer that described capabilities are implemented.
+`sct-marimo` is an exploratory local-first marimo workbench built on the [`sct`](https://github.com/pacharanero/sct) terminology engine. Its Python application boundary exists, but its working notebook does not: do not infer that other described capabilities are implemented.
 
 ## Read First
 
 - [README.md](README.md) - project scope and current status.
 - [spec/product.md](spec/product.md) - product, architecture, trust, and acceptance boundaries.
+- [spec/adapter.md](spec/adapter.md) - implemented Python boundary and known upstream gaps.
 - [spec/roadmap.md](spec/roadmap.md) - unfinished work and stable identifiers.
 - [SAFETY.md](SAFETY.md) - intended use, exclusions, hazards, and current controls.
 - [CONTRIBUTING.md](CONTRIBUTING.md) - contribution workflow.
@@ -32,13 +33,16 @@
 
 ## Validation
 
-The current documentation-only scaffold requires:
+Run every gate before committing:
 
 ```sh
+s/lint
+s/test
+s/build
 reuse lint
 ```
 
-Add format, lint, type-check, test, and notebook execution gates before implementation code lands. Trust-boundary acceptance must include adversarial synthetic values and observation of zero-egress/private-session behaviour, not only unit tests written alongside the implementation.
+Once a notebook exists, add its execution gate here and in CI. Trust-boundary acceptance must include adversarial synthetic values and observation of zero-egress/private-session behaviour, not only unit tests written alongside the implementation.
 
 ## Git
 

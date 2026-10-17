@@ -16,7 +16,10 @@ path = [
     ".editorconfig",
     ".gitignore",
     ".github/**/*.yml",
+    "**/*.pyc",
     "LICENSE",
+    "src/sct_marimo/py.typed",
+    "uv.lock",
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Marcus Baw and Baw Medical Ltd"

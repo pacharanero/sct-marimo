@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2026 Marcus Baw and Baw Medical Ltd
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+[build-system]
+requires = ["hatchling==1.32.4"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sct-marimo"
+version = "0.1.0"
+description = "Local-first marimo workbench for inspecting and testing SNOMED CT concept sets"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSES/AGPL-3.0-or-later.txt"]
+authors = [{ name = "Marcus Baw" }]
+dependencies = [
+    "marimo==0.25.1",
+    "sct-py==0.29.0",
+]
+
+[project.urls]
+Repository = "https://github.com/pacharanero/sct-marimo"
+Issues = "https://github.com/pacharanero/sct-marimo/issues"
+
+[dependency-groups]
+dev = [
+    "mypy==2.4.0",
+    "pytest==9.1.1",
+    "ruff==0.17.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sct_marimo"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["B", "E4", "E7", "E9", "F", "I", "RUF", "SIM", "UP"]
