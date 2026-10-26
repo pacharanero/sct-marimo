@@ -15,7 +15,7 @@ license = "AGPL-3.0-or-later"
 license-files = ["LICENSES/AGPL-3.0-or-later.txt"]
 authors = [{ name = "Marcus Baw" }]
 dependencies = [
-    "marimo==0.25.1",
+    "marimo==0.25.2",
     "sct-py==0.29.0",
 ]
 
@@ -27,7 +27,7 @@ Issues = "https://github.com/pacharanero/sct-marimo/issues"
 dev = [
     "mypy==2.4.0",
     "pytest==9.1.1",
-    "ruff==0.17.1",
+    "ruff==0.17.2",
 ]
 
 [tool.hatch.build.targets.wheel]
